@@ -24,4 +24,10 @@ class ClienteRepositoryTest {
         clienteRepository.save(cliente);
     }
 
+    @Test
+    public void findClienteByEmail(){
+        String emailBD = clienteRepository.findClienteByEmail("fabia@hotmail.com").get().getEmail();
+        assertEquals("fabias@hotmail.com", emailBD);
+    }
+
 }

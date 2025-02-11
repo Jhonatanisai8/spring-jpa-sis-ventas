@@ -60,4 +60,7 @@ public class Cliente {
             length = 9
     )
     private String telefono;
+
+    @Embedded
+    private Direccion direccion;
 }

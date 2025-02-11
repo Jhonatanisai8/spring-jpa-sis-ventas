@@ -27,16 +27,16 @@ import lombok.NoArgsConstructor;
 public class Cliente {
 
     @Id
-    @SequenceGenerator(
-            name = "clientes_sequence",
-            sequenceName = "clientes_sequence",
-            allocationSize = 1
-    )
+//    @SequenceGenerator(
+//            name = "clientes_sequence",
+//            sequenceName = "clientes_sequence",
+//            allocationSize = 1
+//    )
     @GeneratedValue(
-            generator = "clientes_sequence",
-            strategy = GenerationType.SEQUENCE
+            //generator = "clientes_sequence",
+            strategy = GenerationType.IDENTITY
     )
-    private Integer idCliente;
+    private Long idCliente;
 
     @Column(
             length = 45,

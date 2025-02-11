@@ -17,14 +17,14 @@ import lombok.*;
 )
 public class Categoria {
     @Id
-    @SequenceGenerator(
-            name = "categorias_sequence",
-            sequenceName = "categorias_sequence",
-            allocationSize = 1
-    )
+//    @SequenceGenerator(
+//            name = "categorias_sequence",
+//            sequenceName = "categorias_sequence",
+//            allocationSize = 1
+//    )
     @GeneratedValue(
-            generator = "categorias_sequence",
-            strategy = GenerationType.SEQUENCE
+            //generator = "categorias_sequence",
+            strategy = GenerationType.IDENTITY
     )
     private Integer idCategoria;
     @Column(

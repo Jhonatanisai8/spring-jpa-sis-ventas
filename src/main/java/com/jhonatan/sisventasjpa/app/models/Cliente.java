@@ -6,6 +6,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Entity
 @Data
 @AllArgsConstructor
@@ -63,4 +65,14 @@ public class Cliente {
 
     @Embedded
     private Direccion direccion;
+
+    @OneToMany(
+            cascade = CascadeType.ALL,
+            fetch = FetchType.EAGER //trae las facturas de cada cliente
+    )
+    @JoinColumn(
+            name = "id_cliente",
+            referencedColumnName = "idCliente"
+    )
+    private List<Factura> facturas;
 }

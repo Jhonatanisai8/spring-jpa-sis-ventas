@@ -27,28 +27,33 @@ class ClienteRepositoryTest {
     }
 
     @Test
-    public void findClienteByEmail(){
+    public void findClienteByEmail() {
         String emailBD = clienteRepository.findClienteByEmail("fabia@hotmail.com").get().getEmail();
         assertEquals("fabias@hotmail.com", emailBD);
     }
 
     @Test
-    public void findClientesByNombreContaining(){
+    public void findClientesByNombreContaining() {
         List<Cliente> clientes = clienteRepository.findByNombreContaining("A");
         clientes.forEach(System.out::println);
     }
 
     @Test
-    public void findClientesByApellidoContaining(){
+    public void findClientesByApellidoContaining() {
         List<Cliente> clientes = clienteRepository.findByNombreContaining("ASDFGH");
-        assertFalse(clientes.isEmpty(),"La lista de cliente no debe estar vacia");
+        assertFalse(clientes.isEmpty(), "La lista de cliente no debe estar vacia");
         clientes.forEach(System.out::println);
     }
 
     @Test
-    public void findCClientesfindClientesByOrderByNombreAsc(){
+    public void findCClientesfindClientesByOrderByNombreAsc() {
         List<Cliente> clientes = clienteRepository.findClientesByOrderByNombreAsc();
-        assertFalse(clientes.isEmpty(),"La lista de cliente no debe estar vacia");
+        assertFalse(clientes.isEmpty(), "La lista de cliente no debe estar vacia");
         clientes.forEach(System.out::println);
+    }
+
+    @Test
+    void testFindAllClientes0() {
+        clienteRepository.findAll().forEach(System.out::println);
     }
 }
